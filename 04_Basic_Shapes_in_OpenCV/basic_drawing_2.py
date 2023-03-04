@@ -1,11 +1,11 @@
-import matplotlib.pyplot as plt
-import numpy as np
-import cv2
-disetting"""
+"""
 Example to show how to draw basic shapes using OpenCV (2)
 """
 
 # Import required packages:
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
 
 
 def show_with_matplotlib(img, title):
@@ -47,7 +47,7 @@ if ret:
     cv2.line(image, p1, p2, colors['yellow'], 3)
 
 # Show image:
-show_with_matplotlib(image, 'cv2.clipLine()')
+# show_with_matplotlib(image, 'cv2.clipLine()')
 
 # Clean the canvas to draw again:
 image[:] = colors['light_gray']
@@ -59,7 +59,7 @@ cv2.arrowedLine(image, (50, 120), (200, 120),
 cv2.arrowedLine(image, (50, 200), (200, 200), colors['blue'], 3, 8, 0, 0.3)
 
 # Show image:
-show_with_matplotlib(image, 'cv2.arrowedLine()')
+# show_with_matplotlib(image, 'cv2.arrowedLine()')
 
 # Clean the canvas to draw again:
 image[:] = colors['light_gray']
@@ -74,7 +74,7 @@ cv2.ellipse(image, (250, 250), (30, 30), 0, 0, 360, colors['magenta'], 3)
 cv2.ellipse(image, (250, 100), (20, 40), 45, 0, 360, colors['gray'], 3)
 
 # Show image:
-show_with_matplotlib(image, 'cv2.ellipse()')
+# show_with_matplotlib(image, 'cv2.ellipse()')
 
 # Clean the canvas to draw again:
 image[:] = colors['light_gray']
@@ -98,42 +98,12 @@ print("shape of pts '{}'".format(pts.shape))
 # Draw this polygon with False option:
 cv2.polylines(image, [pts], False, colors['green'], 3)
 
-# These points define a pentagon:
-pts = np.array([[20, 90], [60, 60], [100, 90], [80, 130], [40, 130]], np.int32)
-# Reshape to shape (number_vertex, 1, 2)
+pts = np.array([[20, 90], [60, 60], [100, 90], [
+               80, 130], [40, 130]], dtype=np.int32)
 pts = pts.reshape((-1, 1, 2))
-# Print the shapes:
-print("shape of pts '{}'".format(pts.shape))
-# Draw this polygon with True option:
+
 cv2.polylines(image, [pts], True, colors['blue'], 3)
 
-# These points define a pentagon:
-pts = np.array([[20, 180], [60, 150], [100, 180],
-               [80, 220], [40, 220]], np.int32)
-# Reshape to shape (number_vertex, 1, 2)
-pts = pts.reshape((-1, 1, 2))
-# Print the shapes:
-print("shape of pts '{}'".format(pts.shape))
-# Draw this polygon with False option:
-cv2.polylines(image, [pts], False, colors['blue'], 3)
-
-# These points define a rectangle:
-pts = np.array([[150, 100], [200, 100], [200, 150], [150, 150]], np.int32)
-# Reshape to shape (number_vertex, 1, 2)
-pts = pts.reshape((-1, 1, 2))
-# Print the shapes:
-print("shape of pts '{}'".format(pts.shape))
-# Draw this polygon with False option:
-cv2.polylines(image, [pts], True, colors['yellow'], 3)
-
-# These points define a rectangle:
-pts = np.array([[150, 200], [200, 200], [200, 250], [150, 250]], np.int32)
-# Reshape to shape (number_vertex, 1, 2)
-pts = pts.reshape((-1, 1, 2))
-# Print the shapes:
-print("shape of pts '{}'".format(pts.shape))
-# Draw this polygon with False option:
-cv2.polylines(image, [pts], False, colors['yellow'], 3)
 
 # Show image:
-show_with_matplotlib(image, 'cv2.polylines()')
+show_with_matplotlib(image, 'cv2.polylines')
