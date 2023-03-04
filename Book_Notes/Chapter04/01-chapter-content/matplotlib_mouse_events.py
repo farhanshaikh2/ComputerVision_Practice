@@ -36,7 +36,8 @@ def update_img_with_matplotlib():
 # We define the event listener for the 'button_press_event':
 def click_mouse_event(event):
     # (event.xdata, event.ydata) contain the float coordinates of the mouse click event:
-    cv2.circle(image, (int(round(event.xdata)), int(round(event.ydata))), 30, colors['blue'], cv2.FILLED)
+    cv2.circle(image, (int(round(event.xdata)), int(
+        round(event.ydata))), 30, colors['blue'], cv2.FILLED)
     # Call 'update_image()' method to update the Figure:
     update_img_with_matplotlib()
 
